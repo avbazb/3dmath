@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D立体几何可视化</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="input-section">
+            <h1>3D立体几何题目可视化</h1>
+            <textarea id="geometryProblem" placeholder="请输入立体几何题目..."></textarea>
+            <button id="generateBtn">生成3D模型</button>
+            <div class="status-container">
+                <div id="loadingIndicator" style="display: none;">
+                    <div class="loading-spinner"></div>
+                    <div id="processingStatus">处理中...</div>
+                </div>
+                <div id="debugInfo" class="debug-info"></div>
+                <div id="errorMessage" class="error-message"></div>
+            </div>
+        </div>
+        <div class="visualization-section">
+            <div id="canvas-container"></div>
+            <div class="controls">
+                <button id="rotateLeft">←</button>
+                <button id="rotateRight">→</button>
+                <button id="zoomIn">+</button>
+                <button id="zoomOut">-</button>
+                <button id="reset">重置视角</button>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="app.js"></script>
+</body>
+</html> 
